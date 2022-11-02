@@ -186,8 +186,8 @@ class CarController:
               can_sends.extend([hyundaican.create_clu11(self.packer, CS.clu11, Buttons.RES_ACCEL, self.CP.sccBus)] * 25)
               self.last_button_frame = self.frame
 
-      if self.CP.carFingerprint in FEATURES["send_mdps12"]:  # send mdps12 to LKAS to prevent LKAS error
-        can_sends.append(hyundaiexcan.create_mdps12(self.packer, self.frame, CS.mdps12))
+      #if self.CP.carFingerprint in FEATURES["send_mdps12"]:  # send mdps12 to LKAS to prevent LKAS error
+      #  can_sends.append(hyundaiexcan.create_mdps12(self.packer, self.frame, CS.mdps12))
 
       if self.frame % 2 == 0 and self.CP.openpilotLongitudinalControl:
         # TODO: unclear if this is needed

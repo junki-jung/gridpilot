@@ -382,13 +382,14 @@ static int hyundai_fwd_hook(int bus_num, CANPacket_t *to_fwd) {
       if(is_lkas_msg || is_lfahda_msg) {
         if(now - last_ts_lkas11_received_from_op >= 100000) {
           bus_fwd = 0;
-          hyundai_fwd_mdps12(to_fwd);
         }
       }
       else if(is_scc_msg) {
         if(now - last_ts_scc12_received_from_op >= 200000)
           bus_fwd = 0;
       }
+
+      hyundai_fwd_mdps12(to_fwd);
     }
   }
 
